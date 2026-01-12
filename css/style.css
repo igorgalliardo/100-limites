@@ -311,7 +311,7 @@ body {
 .hamburger span {
     width: 26px;
     height: 3px;
-    background-color: var(--black);
+    background-color: var(--orange);
     margin: 4px 0;
 }
 

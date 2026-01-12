@@ -1,0 +1,15 @@
+const hamburger = document.getElementById('hamburger');
+const menuMobile = document.getElementById('menuMobile');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    menuMobile.classList.toggle('active');
+});
+
+// Fecha o menu ao clicar em um link
+document.querySelectorAll('.menu-mobile a').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        menuMobile.classList.remove('active');
+    });
+});
