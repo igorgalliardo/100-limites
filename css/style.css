@@ -488,6 +488,49 @@ body {
     animation-play-state: paused;
 }
 
+.inspiration-title {
+    font-size: 34px;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--orange);
+}
+
+.inspiration-btn {
+    margin-bottom: 50px;
+}
+
+/* GALERIA */
+.inspiration-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.inspiration-gallery img {
+    width: 100%;
+    height: 450px;
+
+    object-fit: cover;
+    object-position: top; /* 🔥 ESSENCIAL */
+
+    border-radius: 14px;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* hover elegante */
+.inspiration-gallery img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+}
+
+
 .events-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -679,6 +722,18 @@ body {
     .partner-item span {
         font-size: 13px;
     }
+    .inspiration-title {
+        font-size: 26px;
+    }
+
+    .inspiration-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .inspiration-gallery img {
+        height: 200px;
+    }
+
     .contact-grid {
         grid-template-columns: 1fr;
     }
@@ -686,4 +741,14 @@ body {
         margin-bottom: 8px;
     }
 
+}
+
+@media (max-width: 480px) {
+    .inspiration-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .inspiration-gallery img {
+        height: 220px;
+    }
 }
