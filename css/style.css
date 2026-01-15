@@ -4,6 +4,14 @@
     --white: #FFFFFF;
     --gray: #6B7280;
     --light: #F9FAFB;
+    --primary: #2F6B3F;
+    --secondary: #1E6F9F;
+
+    --text-main: #1F2933;
+    --text-muted: #6B7280;
+
+    --bg-light: #F6F5F1;
+    --border-light: #E5E7EB;
 }
 
 html {
@@ -164,7 +172,13 @@ body {
 .section-text {
     color: var(--gray);
     max-width: 700px;
-    margin-bottom: 40px;
+    margin-bottom: 40px;text-align: center;
+}
+
+.partner-text{
+    color: var(--gray);
+    text-align: center !important;
+    margin-bottom: 40px;text-align: center;
 }
 
 .about-grid {
@@ -346,6 +360,199 @@ body {
     transform: translateX(0);
 }
 
+.app-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.app-content h2 {
+    margin-bottom: 20px;
+}
+
+.app-content p {
+    color: var(--gray);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.app-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.app-features li {
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: var(--dark);
+}
+
+.app-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.app-btn img {
+    height: 48px;
+    transition: transform 0.25s ease;
+}
+
+.app-btn:hover img {
+    transform: translateY(-2px);
+}
+
+/* IMAGEM */
+.app-image img {
+    width: 100%;
+    max-width: 360px;
+    margin: auto;
+    display: block;
+}
+
+.partners-wrapper {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.partners-track {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+
+    width: fit-content;
+    margin: 0 auto;
+
+    animation: partnersScroll 35s linear infinite;
+}
+
+.partner-item {
+    flex: 0 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.partner-item img {
+    height: 80px;
+    max-width: 200px;
+    object-fit: contain;
+
+    filter: grayscale(100%);
+    opacity: 0.85;
+
+    transition:
+        filter 0.3s ease,
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+.partner-item:hover img {
+    filter: grayscale(0);
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+.partner-item span {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark);
+    opacity: 0.75;
+    white-space: nowrap;
+}
+.partner-item:hover span {
+    opacity: 1;
+}
+
+/* animação */
+@keyframes partnersScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.partners-wrapper:hover .partners-track {
+    animation-play-state: paused;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+.event-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #E5E7EB;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+.event-image {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.event-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.events-text{
+    max-width: 100%;
+    text-align: center !important;
+}
+
+.event-date {
+    font-size: 16px;
+    font-weight: bolder;
+    color: var(--orange);
+}
+
+.event-content h3 {
+    font-size: 18px;
+    color: var(--text-main);
+}
+
+.event-km {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+.event-content .btn-outline {
+    margin-top: auto; /* 🔥 mantém botão alinhado */
+    align-self: flex-start;
+}
+
+
+
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1.3fr;
@@ -448,10 +655,35 @@ body {
     .about-image {
         margin-bottom: 20px;
     }
+    .app-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .app-buttons {
+        justify-content: center;
+    }
+
+    .app-image {
+        margin-top: 30px;
+    }
+    .partners-track {
+        gap: 50px;
+    }
+
+    .partner-item img {
+        height: 64px;
+        max-width: 160px;
+    }
+
+    .partner-item span {
+        font-size: 13px;
+    }
     .contact-grid {
         grid-template-columns: 1fr;
     }
     .footer-links a {
         margin-bottom: 8px;
     }
+
 }
